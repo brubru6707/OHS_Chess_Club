@@ -15,6 +15,10 @@ section:not(#game_hold) {
 	padding: 100px 0px;
 }
 
+#game_hold {
+	padding: 0px 0px 100px 0px;
+}
+
 h1, h2, h3 {
 	font-family: var(--font-1);
 }
@@ -157,17 +161,23 @@ header {
 
 #game_hold {
 	background-color: var(--color-3);
+	padding: 
 }
 
 #game {
 	margin: auto;
-	width: fit-content;
+	width: 90vw;
+	height: fit-content;
 	color: white;
-	padding: 0px 0px 50px 0px;
 }
 
 #game h2 {
-	margin: 0px 0px 30px 0px;
+	margin: 0px 0px 30px 30px;
+}
+
+#iframe_hold {
+	width: fit-content;
+	margin: auto;
 }
 
 #game iframe {
@@ -195,7 +205,7 @@ header {
 .socials {
 	display: flex;
 	justify-content: space-between;
-	width: 30px;
+	width: 150px;
 }
 
 .icon {
@@ -229,17 +239,51 @@ footer {
 
 #contact_info {
 	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr 1.5fr 0.5fr;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 20px 0px;
 	width: 90vw;
-	column-gap: 30px;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 #contact_info h3 {
 	margin: 0px;
 }
 
-iframe {
-	width: 200px;
+#map {
+	width: 400px;
+}
+
+@media (max-width: 700px) {
+	#iframe_hold {
+		--scale-amount: 2;
+		display: flex;
+		justify-content: center;
+		transform-origin: 0 0;
+		transform: scale(calc(1/var(--scale-amount)));
+		width: calc(90vw * var(--scale-amount));
+	}
+	
+	#game {
+				height: 350px;
+	}
+	
+	#contact_info {
+		display: grid;
+		grid-template-rows: 1.3fr 0.3fr 0.3fr;
+		row-gap: 30px;
+		justify-content: center;
+	}
+	#contact_info iframe {
+		width: 300px;
+	}
+	#contact {
+		grid-template-columns: 1fr 0.5fr;
+	}
+}
+
+@media (max-width: 1000px) {
+	#map {
+		width: 200px;
+	}
 }
