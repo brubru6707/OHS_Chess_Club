@@ -138,6 +138,7 @@ header {
 	margin: auto;
 	column-gap: 30px;
 	width: 90vw;
+	align-items: center;
 }
 
 #rev img{
@@ -277,9 +278,20 @@ footer {
 	#contact_info iframe {
 		width: 300px;
 	}
+	
 	#contact {
 		grid-template-columns: 1fr 0.5fr;
 	}
+	
+	footer .socials {
+		width: 100%;
+		justify-content: center;
+	}
+	
+	footer h4 {
+		text-align: center;
+	}
+	
 }
 
 @media (max-width: 1000px) {
